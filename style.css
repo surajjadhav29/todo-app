@@ -1,0 +1,239 @@
+:root {
+    --black: #262626;
+    --font-clr: #F6F7F8;
+    --accent: #FFCC1D;
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 4rem 0 1.25rem 0;
+    min-height: 100vh;
+    color: var(--font-clr);
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: .75rem;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--accent);
+}
+
+input[type="checkbox"]:checked+.task-title {
+    opacity: .4;
+}
+
+main {
+    width: min(650px, 90%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main>* {
+    width: 100%;
+    border-radius: .35rem;
+}
+
+#new-task,
+.task {
+    background-color: var(--black);
+    display: flex;
+}
+
+#new-task {
+    padding: 1.5rem;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+#new-task>* {
+    padding: .75rem 1rem;
+    border: none;
+    border-radius: .35rem;
+    font-size: 1.25rem;
+}
+
+#new-task input {
+    width: 75%;
+}
+
+#new-task button {
+    width: 23%;
+    background-color: var(--accent);
+    color: var(--black);
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all .3s;
+}
+
+#new-task button:hover {
+    box-shadow: 0 0 4px 4px rgb(255, 204, 29, .4);
+}
+
+#tasks img {
+    width: 35%;
+    display: block;
+    margin: 1.25rem auto;
+    opacity: .9;
+}
+
+#tasks p {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.filter {
+    margin: .5rem 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.filter>* {
+    cursor: pointer;
+    padding: .35rem 2rem;
+    transition: all .1s;
+}
+
+.selected {
+    color: var(--black);
+    background-color: var(--accent);
+    border-radius: 30px;
+    font-weight: 500;
+}
+
+.task {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 2px solid #121212;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.15rem;
+}
+
+.task-title {
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.task i {
+    cursor: pointer;
+}
+
+.edit-btn {
+    margin-left: auto;
+    color: #86C6F4;
+}
+
+.del-btn {
+    color: #FF2626;
+}
+
+.footer {
+    text-align: center;
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1.15px;
+}
+
+.footer p {
+    margin-bottom: .65rem;
+}
+
+.footer p a {
+    color: var(--accent);
+}
+
+.footer p a:hover {
+    font-weight: 600;
+}
+
+.social {
+    font-size: 1.6rem;
+}
+
+.social a {
+    color: var(--font-clr);
+    margin: .75rem;
+    transition: all .3s;
+}
+
+.social a:hover {
+    color: var(--accent);
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: .5em;
+    height: .5em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+}
+
+
+/* Scroll bar for mozilla */
+
+@supports (scrollbar-color: var(--black) var(--accent)) {
+    * {
+        scrollbar-color: var(--accent) var(--black);
+        scrollbar-width: thin;
+    }
+}
+
+@media (max-width: 550px) {
+    body {
+        font-size: 14px;
+        padding-top: 3rem;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+    #new-task>* {
+        padding: .65rem .75rem;
+        font-size: 1.1rem;
+    }
+    #new-task input {
+        width: 70%;
+    }
+    #new-task button {
+        width: 28%;
+    }
+    #tasks img {
+        width: 50%;
+    }
+    .filter>* {
+        padding: .5rem 1.5rem;
+    }
+    .task {
+        padding: 1.25rem 1rem;
+        font-size: 1.05rem;
+    }
+}
